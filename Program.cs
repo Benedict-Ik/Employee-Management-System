@@ -7,6 +7,7 @@
         public string Name { get; private set; }
         public string Department { get; set; }
         public int PerformanceRating { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
         // Constructor - Initializer
         public Employee(string employeeId, string name)
@@ -56,10 +57,22 @@
             Team = new List<Employee>();
         }
 
+
         public void AssignTeamMember(Employee employee)
         {
-            Team.Add(employee);
-            Console.WriteLine($"{employee.Name} has successfully been added to {Name}'s team.");
+            if (!Team.Contains(employee) && employee.IsDeleted == false)
+            {
+                Team.Add(employee);
+                Console.WriteLine($"{employee.Name} has successfully been added to {Name}'s team.");
+            }
+            else if (Team.Contains(employee))
+            {
+                Console.WriteLine($"{employee.Name} already exists in the team.");
+            }
+            else if (employee.IsDeleted == true)
+            {
+                Console.WriteLine("Employee has been removed from the system.");
+            }
         }
 
         //public void ViewTeamDetails(Employee employee)
@@ -92,17 +105,6 @@
             Console.WriteLine($"{employee.Name} has successfully been added.");
         }
 
-        //public void UpdateEmployee(Employee employee)
-        //{
-        //    if (Employees.Contains(employee))
-        //    {
-        //        employee.UpdateDetails(employee.Name);
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Employee does not exist in the system.");
-        //    }
-        //}
 
         public void UpdateEmployee(string employeeId, string newName)
         {
@@ -127,6 +129,7 @@
             if (employee != null)
             {
                 Employees.Remove(employee);
+                employee.IsDeleted = true;
                 Console.WriteLine($"{employee.Name} has successfully been removed.");
             }
             else
@@ -270,6 +273,7 @@
             // Assigning team members to the manager
             Console.WriteLine($"\nAssigning manager {manager1.Name} team members:");
             manager1.AssignTeamMember(employee1);
+            manager1.AssignTeamMember(employee2);
             manager1.AssignTeamMember(employee2);
             manager1.AssignTeamMember(employee3);
 
