@@ -7,7 +7,7 @@
         public string Name { get; private set; }
         public string Department { get; set; }
         public int PerformanceRating { get; set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool IsDeleted { get; set; }
 
         // Constructor - Initializer
         public Employee(string employeeId, string name)
@@ -16,6 +16,7 @@
             Name = name;
             Department = "Unassigned";
             PerformanceRating = 0;
+            IsDeleted = false;
         }
 
         // Methods
