@@ -12,3 +12,4 @@ C:\Users\bened\OneDrive\Documents\Projects\CSharp\Employee-Management-System\Emp
 C:\Users\bened\OneDrive\Documents\Projects\CSharp\Employee-Management-System\Employee-Management-System\obj\Debug\net8.0\Employee-Management-System.pdb
 C:\Users\bened\OneDrive\Documents\Projects\CSharp\Employee-Management-System\Employee-Management-System\obj\Debug\net8.0\Employee-Management-System.genruntimeconfig.cache
 C:\Users\bened\OneDrive\Documents\Projects\CSharp\Employee-Management-System\Employee-Management-System\obj\Debug\net8.0\ref\Employee-Management-System.dll
+C:\Users\bened\OneDrive\Documents\Projects\CSharp\Employee-Management-System\Employee-Management-System\obj\Debug\net8.0\Employee-Management-System.sourcelink.json
