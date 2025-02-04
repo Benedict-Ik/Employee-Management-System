@@ -21,18 +21,13 @@
         //public void UpdateDetails(Employee employee)
         public void UpdateDetails(string name)
         {
-            //Name = employee.Name;
             Name = name;
-            //Console.WriteLine("Name has successfully been updated.");
             Console.WriteLine($"Employee: {EmployeeId} name has been updated.");
         }
 
-        //public void AssignDepartment(Employee employee)
         public void AssignDepartment(string department)
         {
-            //Department = employee.Department;
             Department = department;
-            //Console.WriteLine($"{employee.Name} has successfully been assigned to {Department}");
             Console.WriteLine($"{Name} has successfully been assigned to {Department}");
         }
 
@@ -124,8 +119,6 @@
             }
         }
 
-
-        //public void DeleteEmployee(string employeeId, string name)
         public void DeleteEmployee(string employeeId)
         {
             // The below line is a LINQ method that basically says,
@@ -135,7 +128,6 @@
             {
                 Employees.Remove(employee);
                 Console.WriteLine($"{employee.Name} has successfully been removed.");
-                //employee = null;
             }
             else
             {
@@ -143,7 +135,6 @@
             }
         }
 
-        //public void ViewEmployeesByDepartment(Employee employee)
         public void ViewEmployeesByDepartment(string department)
         {
             int counter = 1;
@@ -164,17 +155,6 @@
                 Console.WriteLine("Employee not found.");
             }
         }
-
-        //public void ViewEmployeesByPerformanceRating(Employee employee)
-        //{
-        //    int counter = 1;
-        //    Console.WriteLine($"No \tName \t\tPerformance Rating");
-        //    foreach (var e in Employees)
-        //    {
-        //        Console.WriteLine($"{counter}.\t{e.Name} \t\t{e.PerformanceRating}");
-        //        counter++;
-        //    }
-        //}
 
         public void ViewEmployeesByPerformanceRating(int performanceRating)
         {
