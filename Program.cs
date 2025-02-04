@@ -125,7 +125,8 @@
         }
 
 
-        public void DeleteEmployee(string employeeId, string name)
+        //public void DeleteEmployee(string employeeId, string name)
+        public void DeleteEmployee(string employeeId)
         {
             // The below line is a LINQ method that basically says,
             // "Find the first employee in the list of employees where the employeeId matches the employeeId passed in the method."
@@ -134,6 +135,7 @@
             {
                 Employees.Remove(employee);
                 Console.WriteLine($"{employee.Name} has successfully been removed.");
+                //employee = null;
             }
             else
             {
@@ -180,7 +182,7 @@
             Console.WriteLine("");
             // Below line, retrieves a list of employees that belong to the department passed in the method
             var departmentEmployees = Employees.Where(e => e.PerformanceRating == performanceRating).ToList();
-            Console.WriteLine($"No \tName \t\t\tDepartment");
+            Console.WriteLine($"No \tName \t\t\tPerformance Rating");
             foreach (var employee in departmentEmployees)
             {
                 Console.WriteLine($"{counter}.\t{employee.Name} \t\t{employee.PerformanceRating}");
@@ -213,11 +215,11 @@
 
             // Testing UpdateDetails() functionality
             Console.WriteLine($"\nModifying {employee1.EmployeeId} name:");
-            employee1.UpdateDetails("Noah");
+            employee1.UpdateDetails("Noah Cyrus");
             Console.WriteLine($"{employee1.EmployeeId} new name is: {employee1.Name}");
 
             // Testing AssignDepartment() functionality
-            Console.WriteLine($"\nAssigning {employee1.EmployeeId} to IT department:");
+            Console.WriteLine($"\nAssigning employees to IT department:");
             employee1.AssignDepartment("IT");
             employee3.AssignDepartment("IT");
             employee5.AssignDepartment("IT");
@@ -226,25 +228,26 @@
             //Console.WriteLine($"{employee1.Name} has been assigned to {employee1.Department}");
 
             // Testing AddPerformanceRating() functionality
-            Console.WriteLine($"\nAdding performance rating to {employee1.EmployeeId}:");
+            Console.WriteLine($"\nAssigning performance rating to employees:");
+            //Console.WriteLine($"\nAdding performance rating to {employee1.EmployeeId}:");
             employee1.AddPerformanceRating(4);
-            Console.WriteLine($"{employee1.Name} has a performance rating of: {employee1.PerformanceRating}");
+            Console.WriteLine($"{employee1.Name} now has a performance rating of: {employee1.PerformanceRating}");
 
-            Console.WriteLine($"\nAdding performance rating to {employee3.EmployeeId}:");
+            //Console.WriteLine($"\nAdding performance rating to {employee3.EmployeeId}:");
             employee3.AddPerformanceRating(4);
-            Console.WriteLine($"{employee3.Name} has a performance rating of: {employee3.PerformanceRating}");
+            Console.WriteLine($"{employee3.Name} now has a performance rating of: {employee3.PerformanceRating}");
 
-            Console.WriteLine($"\nAdding performance rating to {employee5.EmployeeId}:");
+            //Console.WriteLine($"\nAdding performance rating to {employee5.EmployeeId}:");
             employee5.AddPerformanceRating(4);
-            Console.WriteLine($"{employee5.Name} has a performance rating of: {employee5.PerformanceRating}");
+            Console.WriteLine($"{employee5.Name} now has a performance rating of: {employee5.PerformanceRating}");
 
-            Console.WriteLine($"\nAdding performance rating to {employee7.EmployeeId}:");
+            //Console.WriteLine($"\nAdding performance rating to {employee7.EmployeeId}:");
             employee7.AddPerformanceRating(4);
-            Console.WriteLine($"{employee7.Name} has a performance rating of: {employee7.PerformanceRating}");
+            Console.WriteLine($"{employee7.Name} now has a performance rating of: {employee7.PerformanceRating}");
 
-            Console.WriteLine($"\nAdding performance rating to {employee9.EmployeeId}:");
+            //Console.WriteLine($"\nAdding performance rating to {employee9.EmployeeId}:");
             employee9.AddPerformanceRating(4);
-            Console.WriteLine($"{employee9.Name} has a performance rating of: {employee9.PerformanceRating}");
+            Console.WriteLine($"{employee9.Name} now has a performance rating of: {employee9.PerformanceRating}");
 
             Console.WriteLine("");
 
@@ -253,7 +256,7 @@
             EmployeeManager employeeManager = new EmployeeManager();
 
             // Adding a new employee to the employee manager
-            Console.WriteLine("Adding new employees below: ");
+            Console.WriteLine("Adding new employees to EmployeeManager below: ");
             employeeManager.AddEmployee(employee1);
             employeeManager.AddEmployee(employee2);
             employeeManager.AddEmployee(employee3);
@@ -267,7 +270,8 @@
 
             // Testing DeleteEmployee() functionality
             Console.WriteLine($"\nDeleting {employee1.EmployeeId}:");
-            employeeManager.DeleteEmployee("EMP001", "Michael Brown");
+            //employeeManager.DeleteEmployee("EMP001", "Michael Brown");
+            employeeManager.DeleteEmployee("EMP001");
 
             // Testing ViewEmployeesByDepartment() functionality
             Console.WriteLine($"\nViewing employees in IT department:");
